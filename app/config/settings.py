@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import pymysql
+
+# connect mysql
+pymysql.install_as_MySQLdb()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -80,7 +84,7 @@ DATABASES = {
         'NAME': 'pathy',
         'USER': 'pathy',
         'PASSWORD': 'panda5656',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': '3306',
         # 'OPTIONS': {
         #         'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
@@ -121,6 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = '/static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
