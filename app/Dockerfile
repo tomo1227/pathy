@@ -4,10 +4,10 @@ ENV PYTHONUNBUFFERED 1
 #uwsgiログファイル作成
 RUN mkdir -p /var/log/uwsgi/ && touch uwsgi.log
 # 各種命令実行のカレントディレクトリを指定
-WORKDIR /opt
+WORKDIR /opt/pathy/
 # ローカルのrequirements.txtをコンテナ内の/code/にコピー
-ADD requirements.txt /opt/
+ADD requirements.txt /opt/pathy/
 # コマンド実行
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-ADD . /opt/
+ADD . /opt/pathy/
