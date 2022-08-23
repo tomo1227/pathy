@@ -2,6 +2,8 @@ version: '3'
 services:
   web:
     image: nginx:1.23.1
+    # ホスト名を明示的に指定する
+    hostname: web_pathy
     volumes:
       #設定ファイル
       - ./web/conf/:/etc/nginx/conf.d
@@ -17,6 +19,8 @@ services:
 
   db:
     image: mariadb:10.8.3
+    # ホスト名を明示的に指定する
+    hostname: db_pathy
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  #実行時のコマンド
     ports:
       - "3306:3306" #ポート指定、ホスト:コンテナ
@@ -32,9 +36,11 @@ services:
   
   app:
     build: ./app
+    # ホスト名を明示的に指定する
+    hostname: app_pathy
     command: uwsgi --ini /etc/nginx/uwsgi.ini
     volumes: 
-      - ./app:/code
+      - ./app:/opt/pathy
       - ./static:/static
       - ./web/uwsgi.ini:/etc/nginx/uwsgi.ini
     expose:
