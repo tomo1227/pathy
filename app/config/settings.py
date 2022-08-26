@@ -133,4 +133,5 @@ STATIC_ROOT = '/static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'User.User'
+#Userモデルを指定
+AUTH_USER_MODEL = 'User.MyUser'
