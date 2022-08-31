@@ -1,7 +1,8 @@
-version: '3'
+version: '3.8'
 services:
   web:
     image: nginx:1.23.1
+    container_name: web-container
     # ホスト名を明示的に指定する
     hostname: web_pathy
     volumes:
@@ -15,10 +16,11 @@ services:
     ports:
       - "8000:8000" #ポート指定、ホスト:コンテナ
     depends_on:
-      - app  #appに依存
+      - back  #appに依存
 
   db:
     image: mariadb:10.8.3
+    container_name: db-container
     # ホスト名を明示的に指定する
     hostname: db_pathy
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  #実行時のコマンド
@@ -34,16 +36,42 @@ services:
       - ./db/mysql/:/var/lib/mysql/
       #- ./db/log/mysql/:/var/log/mysql/
   
-  app:
-    build: ./app
+  back:
+    container_name: back-container
+    build:
+      context: ./apps
+      dockerfile: Dockerfile
     # ホスト名を明示的に指定する
-    hostname: app_pathy
+    hostname: apps_pathy
     command: uwsgi --ini /etc/nginx/uwsgi.ini
     volumes: 
-      - ./app:/opt/pathy
+      - ./apps:/opt/pathy
       - ./static:/static
       - ./web/uwsgi.ini:/etc/nginx/uwsgi.ini
     expose:
       - "8001"
     depends_on:
       - db  #dbに依存
+    networks:
+      - django_net
+
+  front:
+      build:
+        context: ./front
+        dockerfile: ./Dockerfile
+    command: 'sh /app/start.sh'
+    volumes:
+      - ./front:/app/:cached
+      - ./front/node_modules:/app/node_modules
+    ports:
+      - "8080:8080"
+    expose:
+      -  "3000"
+    depends_on:
+      -  back
+    networks:
+      - django_net
+  
+  networks:
+  django-net:
+    driver: bridge
