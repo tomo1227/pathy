@@ -1,13 +1,18 @@
 FROM python:3.10.6
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-#/codeディレクトリ作成
+EXPOSE 8000
+
+#開発ディレクトリ作成
+ENV WORKDIR /opt/pathy
+
 #uwsgiログファイル作成
 RUN mkdir -p /var/log/uwsgi/ && touch uwsgi.log
 # 各種命令実行のカレントディレクトリを指定
-WORKDIR /opt/pathy/
-# ローカルのrequirements.txtをコンテナ内の/code/にコピー
-ADD requirements.txt /opt/pathy/
+WORKDIR ${WORKDIR}
+# ローカルのrequirements.txtをコンテナ内のにコピー
+ADD requirements.txt ${WORKDIR}
 # コマンド実行
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-ADD . /opt/pathy/
+ADD . ${WORKDIR}/

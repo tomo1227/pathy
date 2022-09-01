@@ -2,11 +2,12 @@ version: '3.8'
 services:
   web:
     image: nginx:1.23.1
-    container_name: web-container
-    # ホスト名を明示的に指定する
+    container_name: web
+    #ホスト名を明示的に指定する
     hostname: web_pathy
     volumes:
       #設定ファイル
+      #[ホスト側の相対Path]:コンテナの絶対Path
       - ./web/conf/:/etc/nginx/conf.d
       #ログ
       - ./web/log/nginx/:/var/log/nginx/
@@ -17,10 +18,12 @@ services:
       - "8000:8000" #ポート指定、ホスト:コンテナ
     depends_on:
       - back  #appに依存
+    networks:
+      - pathy_net
 
   db:
     image: mariadb:10.8.3
-    container_name: db-container
+    container_name: db
     # ホスト名を明示的に指定する
     hostname: db_pathy
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  #実行時のコマンド
@@ -35,32 +38,35 @@ services:
     volumes:
       - ./db/mysql/:/var/lib/mysql/
       - ./db/log/mysql/:/var/log/mysql/
-  
+    netwoks:
+      - pathy_net
+
   back:
-    container_name: back-container
+    container_name: back
     build:
-      context: ./apps
-      dockerfile: Dockerfile
+      context: ./back
+      dockerfile: ./Dockerfile
     # ホスト名を明示的に指定する
     hostname: apps_pathy
     command: uwsgi --ini /etc/nginx/uwsgi.ini
-    volumes: 
-      - ./apps:/opt/pathy
+    volumes:
+      - ./back:/opt/pathy
       - ./static:/static
       - ./web/uwsgi.ini:/etc/nginx/uwsgi.ini
     expose:
       - "8001"
+    tty: true
     depends_on:
       - db  #dbに依存
     networks:
-      - django_net
+      - pathy_net
 
   front:
-    container_name: front-container
+    container_name: front
     build:
       context: ./front
       dockerfile: ./Dockerfile
-    command: 'sh ./scripts/start.sh'
+    command: 'sh /code/scripts/start.sh'
     volumes:
       - ./front:/code
       - ./front/node_modules:/app/node_modules
@@ -68,11 +74,12 @@ services:
       - "8080:8080"
     expose:
       -  "3000"
+    tty: true
     depends_on:
       -  back
     networks:
-      - django_net
+      - pathy_net
   
 networks:
-  django_net:
+  pathy_net:
     driver: bridge
