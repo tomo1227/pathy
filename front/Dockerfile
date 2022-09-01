@@ -1,7 +1,7 @@
 FROM node:16.17.0
  
 # 開発ディレクトリ設定
-ENV WORKDIR /code
+ENV WORKDIR /front
 WORKDIR ${WORKDIR}
  
 # コンテナ内でパッケージを一括インストール

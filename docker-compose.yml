@@ -60,6 +60,7 @@ services:
     build:
       context: ./front
       dockerfile: ./Dockerfile
+    command: 'sh ./scripts/start.sh'
     volumes:
       - ./front:/code
       - ./front/node_modules:/app/node_modules
