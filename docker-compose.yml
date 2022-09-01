@@ -73,5 +73,5 @@ services:
       - django_net
   
 networks:
-django-net:
-  driver: bridge
+  django-net:
+    driver: bridge
