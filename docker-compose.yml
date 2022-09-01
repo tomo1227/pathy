@@ -9,7 +9,7 @@ services:
       #設定ファイル
       - ./web/conf/:/etc/nginx/conf.d
       #ログ
-      #- ./web/log/nginx/:/var/log/nginx/
+      - ./web/log/nginx/:/var/log/nginx/
       - ./web/uwsgi_params:/etc/nginx/uwsgi_params
       #staticファイル
       - ./static:/static
@@ -34,7 +34,7 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - ./db/mysql/:/var/lib/mysql/
-      #- ./db/log/mysql/:/var/log/mysql/
+      - ./db/log/mysql/:/var/log/mysql/
   
   back:
     container_name: back-container
@@ -59,9 +59,8 @@ services:
       build:
         context: ./front
         dockerfile: ./Dockerfile
-    command: 'sh /app/start.sh'
     volumes:
-      - ./front:/app/:cached
+      - ./front:/code
       - ./front/node_modules:/app/node_modules
     ports:
       - "8080:8080"
