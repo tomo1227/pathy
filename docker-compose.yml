@@ -56,9 +56,10 @@ services:
       - django_net
 
   front:
-      build:
-        context: ./front
-        dockerfile: ./Dockerfile
+    container_name: front-container
+    build:
+      context: ./front
+      dockerfile: ./Dockerfile
     volumes:
       - ./front:/code
       - ./front/node_modules:/app/node_modules
@@ -71,6 +72,6 @@ services:
     networks:
       - django_net
   
-  networks:
-  django-net:
-    driver: bridge
+networks:
+django-net:
+  driver: bridge
