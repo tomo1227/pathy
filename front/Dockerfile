@@ -6,6 +6,10 @@ WORKDIR /code
 
 #  # コンテナ内でパッケージを一括インストール
 RUN npm update npm && npm install -g @vue/cli && \
-    npm install -g @vue/cli-init 
+    npm install -g @vue/cli-init
+RUN npm install axios
+
+RUN ["apt-get", "update"]
+RUN ["apt-get", "install", "-y", "vim"]
 
 COPY . ${WORKDIR}/
