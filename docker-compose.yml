@@ -1,24 +1,29 @@
-version: '3'
+version: '3.8'
 services:
   web:
     image: nginx:1.23.1
-    # ホスト名を明示的に指定する
+    container_name: web
+    #ホスト名を明示的に指定する
     hostname: web_pathy
     volumes:
       #設定ファイル
+      #[ホスト側の相対Path]:コンテナの絶対Path
       - ./web/conf/:/etc/nginx/conf.d
       #ログ
-      #- ./web/log/nginx/:/var/log/nginx/
+      - ./web/log/nginx/:/var/log/nginx/
       - ./web/uwsgi_params:/etc/nginx/uwsgi_params
       #staticファイル
       - ./static:/static
     ports:
       - "8000:8000" #ポート指定、ホスト:コンテナ
     depends_on:
-      - app  #appに依存
+      - back  #appに依存
+    networks:
+      - pathy_net
 
   db:
     image: mariadb:10.8.3
+    container_name: db
     # ホスト名を明示的に指定する
     hostname: db_pathy
     command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  #実行時のコマンド
@@ -32,18 +37,49 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - ./db/mysql/:/var/lib/mysql/
-      #- ./db/log/mysql/:/var/log/mysql/
-  
-  app:
-    build: ./app
+      - ./db/log/mysql/:/var/log/mysql/
+    networks:
+      - pathy_net
+
+  back:
+    container_name: back
+    build:
+      context: ./back
+      dockerfile: ./Dockerfile
     # ホスト名を明示的に指定する
-    hostname: app_pathy
+    hostname: apps_pathy
     command: uwsgi --ini /etc/nginx/uwsgi.ini
-    volumes: 
-      - ./app:/opt/pathy
+    volumes:
+      - ./back:/opt/pathy
       - ./static:/static
       - ./web/uwsgi.ini:/etc/nginx/uwsgi.ini
     expose:
       - "8001"
+    tty: true
     depends_on:
       - db  #dbに依存
+    networks:
+      - pathy_net
+
+  front:
+    container_name: front
+    build:
+      context: ./front
+      dockerfile: ./Dockerfile
+    command: 'sh /code/scripts/start.sh'
+    volumes:
+      - ./front:/code
+      - ./front/node_modules:/code/node_modules
+    ports:
+      - "8080:8080"
+    expose:
+      -  "3000"
+    tty: true
+    depends_on:
+      -  back
+    networks:
+      - pathy_net
+  
+networks:
+  pathy_net:
+    driver: bridge
