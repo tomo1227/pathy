@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import pymysql
+import datetime
 
 # connect mysql
 pymysql.install_as_MySQLdb()
@@ -35,7 +36,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'User.apps.UserConfig',
     'memo.apps.MemoConfig',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
+    'djoser',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -52,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -131,3 +140,90 @@ STATIC_ROOT = '/static'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+# トークンの設定
+SIMPLE_JWT = {
+    # アクセストークンの有効期限
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(hours=1),
+    # リフレッシュトークンの有効期限
+    'REFRESH_TOKEN_LIFETIME': datetime.timedelta(days=30),
+    'ROTATE_REFRESH_TOKENS': True,
+    'UPDATE_LAST_LOGIN': True,
+    # 認証タイプ
+    'AUTH_HEADER_TYPES': ('JWT',),
+    # 認証トークン
+    'AUTH_TOKEN_CLASSLES': ('rest_framework_simplejwt.tokens.AccessToken',)
+}
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+
+# https://djoser.readthedocs.io/en/latest/settings.html
+DJOSER = {
+    # メールアドレスログイン
+    'LOGIN_FIELD': 'email',
+    # アカウント本登録
+    'SEND_ACTIVATION_EMAIL': True,
+    # アカウント本登録完了メール
+    'SEND_CONFIRMATION_EMAIL': True,
+    # パスワード変更完了メール
+    'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
+    # メール変更完了メール
+    'USERNAME_CHANGED_EMAIL_CONFIRMATION': True,
+    # 登録時パスワード確認必須
+    'USER_CREATE_PASSWORD_RETYPE': True,
+    # メール変更時の確認必須
+    'SET_USERNAME_RETYPE': True,
+    # パスワード変更時の確認必須
+    'SET_PASSWORD_RETYPE': True,
+    # パスワードリセットURL
+    'PASSWORD_RESET_CONFIRM_URL': '/password/reset/confirm/{uid}/{token}',
+    # メールアドレスリセットURL
+    'USERNAME_RESET_CONFIRM_URL': '/email/reset/confirm/{uid}/{token}',
+    # アカウント登録URL
+    'ACTIVATION_URL': '/activate/{uid}/{token}',
+    'SERIALIZERS': {
+        'user_create': 'User.serializers.MyUserCreateSerializer',
+
+    },
+    # メール文面
+    'EMAIL': {
+        # アカウント本登録
+        'activation': 'User.email.ActivationEmail',
+        # アカウント本登録完了
+        'confirmation': 'User.email.ConfirmationEmail',
+        # パスワードリセット
+        'password_reset': 'User.email.PasswordResetEmail',
+        # パスワードリセット完了
+        'password_changed_confirmation': 'User.email.PasswordChangedConfirmationEmail',
+        # メールアドレスリセット完了
+        'username_changed_confirmation': 'User.email.UsernameChangedConfirmationEmail',
+        # メールアドレスリセット
+        'username_reset': 'User.email.UsernameResetEmail',
+    }
+}
+
+#Userモデルを指定
+AUTH_USER_MODEL = 'User.MyUser'
+
+
+# メール関連
+# ローカル確認
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# 本番
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'xxx@xxx'
+EMAIL_USE_TLS = TrueDEFAULT_FROM_EMAIL = 'xxx@xxx'

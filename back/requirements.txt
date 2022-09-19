@@ -4,3 +4,7 @@ PyMySQL==1.0.2
 #vue.jsに必要かもrestapi
 djangorestframework==3.13.1
 django-filter==22.1
+django-cors-headers==3.11.0
+djangorestframework-simplejwt==5.2.0
+PyJWT==1.7.1
+djoser==2.1.0

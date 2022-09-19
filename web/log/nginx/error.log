@@ -74,3 +74,179 @@
 2022/09/09 18:35:08 [notice] 1#1: worker process 23 exited with code 0
 2022/09/09 18:35:08 [notice] 1#1: worker process 22 exited with code 0
 2022/09/09 18:35:08 [notice] 1#1: exit
+2022/09/12 14:28:46 [notice] 1#1: using the "epoll" event method
+2022/09/12 14:28:46 [notice] 1#1: nginx/1.23.1
+2022/09/12 14:28:46 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/12 14:28:46 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/12 14:28:46 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/12 14:28:46 [notice] 1#1: start worker processes
+2022/09/12 14:28:46 [notice] 1#1: start worker process 22
+2022/09/12 14:28:46 [notice] 1#1: start worker process 23
+2022/09/12 14:29:28 [error] 22#22: *2 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:29:28 [warn] 22#22: *2 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:47:39 [error] 23#23: *6 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:47:39 [warn] 23#23: *6 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:48:17 [error] 23#23: *6 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:48:17 [warn] 23#23: *6 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:50:44 [error] 23#23: *23 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:50:44 [warn] 23#23: *23 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:52:46 [error] 23#23: *32 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:52:46 [warn] 23#23: *32 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:55:03 [error] 22#22: *41 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:55:03 [warn] 22#22: *41 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:09 [error] 22#22: *46 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:09 [warn] 22#22: *46 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:24 [error] 22#22: *46 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:24 [warn] 22#22: *46 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:51 [error] 22#22: *46 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 14:59:51 [warn] 22#22: *46 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 15:01:55 [error] 23#23: *66 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 15:01:55 [warn] 23#23: *66 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 15:06:58 [error] 22#22: *72 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 15:06:58 [warn] 22#22: *72 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/12 15:07:22 [error] 22#22: *80 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/12 15:07:22 [warn] 22#22: *80 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/12 15:12:06 [error] 22#22: *84 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/12 15:12:06 [warn] 22#22: *84 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 13:50:39 [error] 22#22: *98 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 13:50:39 [warn] 22#22: *98 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 13:50:53 [error] 22#22: *98 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 13:50:53 [warn] 22#22: *98 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 14:15:37 [error] 23#23: *113 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 14:15:37 [warn] 23#23: *113 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "127.0.0.1:8000"
+2022/09/13 14:16:21 [error] 23#23: *119 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:16:21 [warn] 23#23: *119 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:33:35 [error] 22#22: *126 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:33:35 [warn] 22#22: *126 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:33:46 [error] 22#22: *126 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:33:46 [warn] 22#22: *126 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:34:19 [error] 22#22: *126 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:34:19 [warn] 22#22: *126 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:38:24 [error] 23#23: *142 connect() failed (111: Connection refused) while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:38:24 [warn] 23#23: *142 upstream server temporarily disabled while connecting to upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.4:3000", host: "localhost:8000"
+2022/09/13 14:38:53 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/13 14:38:53 [notice] 22#22: gracefully shutting down
+2022/09/13 14:38:53 [notice] 23#23: gracefully shutting down
+2022/09/13 14:38:53 [notice] 22#22: exiting
+2022/09/13 14:38:53 [notice] 22#22: exit
+2022/09/13 14:38:53 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/13 14:38:53 [notice] 1#1: worker process 22 exited with code 0
+2022/09/13 14:38:53 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/13 14:39:07 [notice] 1#1: using the "epoll" event method
+2022/09/13 14:39:07 [notice] 1#1: nginx/1.23.1
+2022/09/13 14:39:07 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/13 14:39:07 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/13 14:39:07 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/13 14:39:07 [notice] 1#1: start worker processes
+2022/09/13 14:39:07 [notice] 1#1: start worker process 22
+2022/09/13 14:39:07 [notice] 1#1: start worker process 23
+2022/09/13 14:40:40 [error] 22#22: *1 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:40 [error] 23#23: *2 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 22#22: *6 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 23#23: *2 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 22#22: *7 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 23#23: *8 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 22#22: *1 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 23#23: *9 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 22#22: *6 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:40:41 [error] 23#23: *2 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.28.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/token/"
+2022/09/13 14:46:17 [error] 22#22: *26 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:46:41 [error] 22#22: *26 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:47:18 [error] 23#23: *30 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:47:33 [error] 22#22: *33 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:48:06 [error] 22#22: *33 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /memo/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:50:05 [error] 23#23: *39 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /memo/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:50:12 [error] 23#23: *39 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 14:50:24 [error] 23#23: *39 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET / HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 15:31:38 [error] 23#23: *62 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 15:31:48 [error] 23#23: *62 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 15:32:18 [error] 23#23: *62 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/13 15:32:34 [error] 23#23: *62 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/17 01:20:13 [error] 23#23: *162 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "POST /user/register/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000", referrer: "http://localhost:8000/user/register/"
+2022/09/18 14:29:28 [error] 23#23: *401 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/mypage/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 14:29:39 [error] 23#23: *401 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/refresh/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 14:29:56 [error] 23#23: *401 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 14:36:30 [error] 23#23: *411 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/mypage/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 15:07:31 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/18 15:07:31 [notice] 22#22: gracefully shutting down
+2022/09/18 15:07:31 [notice] 23#23: gracefully shutting down
+2022/09/18 15:07:31 [notice] 22#22: exiting
+2022/09/18 15:07:31 [notice] 22#22: exit
+2022/09/18 15:07:31 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/18 15:07:31 [notice] 1#1: worker process 22 exited with code 0
+2022/09/18 15:07:31 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/18 15:07:43 [notice] 1#1: using the "epoll" event method
+2022/09/18 15:07:43 [notice] 1#1: nginx/1.23.1
+2022/09/18 15:07:43 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/18 15:07:43 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/18 15:07:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/18 15:07:43 [notice] 1#1: start worker processes
+2022/09/18 15:07:43 [notice] 1#1: start worker process 22
+2022/09/18 15:07:43 [notice] 1#1: start worker process 23
+2022/09/18 17:53:17 [error] 23#23: *163 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 18:10:17 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/18 18:10:17 [notice] 22#22: gracefully shutting down
+2022/09/18 18:10:17 [notice] 23#23: gracefully shutting down
+2022/09/18 18:10:17 [notice] 22#22: exiting
+2022/09/18 18:10:17 [notice] 22#22: exit
+2022/09/18 18:10:17 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/18 18:10:17 [notice] 1#1: worker process 22 exited with code 0
+2022/09/18 18:10:17 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/18 18:10:21 [notice] 23#23: exiting
+2022/09/18 18:10:21 [notice] 23#23: exit
+2022/09/18 18:10:21 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/18 18:10:21 [notice] 1#1: worker process 23 exited with code 0
+2022/09/18 18:10:21 [notice] 1#1: exit
+2022/09/18 18:10:23 [notice] 1#1: using the "epoll" event method
+2022/09/18 18:10:23 [notice] 1#1: nginx/1.23.1
+2022/09/18 18:10:23 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/18 18:10:23 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/18 18:10:23 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/18 18:10:23 [notice] 1#1: start worker processes
+2022/09/18 18:10:23 [notice] 1#1: start worker process 22
+2022/09/18 18:10:23 [notice] 1#1: start worker process 23
+2022/09/18 19:14:05 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/18 19:14:05 [notice] 22#22: gracefully shutting down
+2022/09/18 19:14:05 [notice] 22#22: exiting
+2022/09/18 19:14:05 [notice] 23#23: gracefully shutting down
+2022/09/18 19:14:05 [notice] 22#22: exit
+2022/09/18 19:14:05 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/18 19:14:05 [notice] 1#1: worker process 22 exited with code 0
+2022/09/18 19:14:05 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/18 19:14:18 [notice] 1#1: using the "epoll" event method
+2022/09/18 19:14:18 [notice] 1#1: nginx/1.23.1
+2022/09/18 19:14:18 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/18 19:14:18 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/18 19:14:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/18 19:14:18 [notice] 1#1: start worker processes
+2022/09/18 19:14:18 [notice] 1#1: start worker process 23
+2022/09/18 19:14:18 [notice] 1#1: start worker process 24
+2022/09/18 19:17:48 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/login/ HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:17:55 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/auth HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:17:58 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/auth HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:18:00 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/auth HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:18:32 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user/auth HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:18:36 [error] 23#23: *6 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:18:42 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/18 19:18:42 [notice] 23#23: gracefully shutting down
+2022/09/18 19:18:42 [notice] 24#24: gracefully shutting down
+2022/09/18 19:18:42 [notice] 23#23: exiting
+2022/09/18 19:18:42 [notice] 24#24: exiting
+2022/09/18 19:18:42 [notice] 23#23: exit
+2022/09/18 19:18:42 [notice] 24#24: exit
+2022/09/18 19:18:42 [notice] 1#1: signal 17 (SIGCHLD) received from 24
+2022/09/18 19:18:42 [notice] 1#1: worker process 24 exited with code 0
+2022/09/18 19:18:42 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/18 19:18:42 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/18 19:18:42 [notice] 1#1: worker process 23 exited with code 0
+2022/09/18 19:18:42 [notice] 1#1: exit
+2022/09/18 19:18:45 [notice] 1#1: using the "epoll" event method
+2022/09/18 19:18:45 [notice] 1#1: nginx/1.23.1
+2022/09/18 19:18:45 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/18 19:18:45 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/18 19:18:45 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/18 19:18:45 [notice] 1#1: start worker processes
+2022/09/18 19:18:45 [notice] 1#1: start worker process 22
+2022/09/18 19:18:45 [notice] 1#1: start worker process 23
+2022/09/18 19:19:19 [error] 22#22: *2 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/18 19:19:22 [error] 22#22: *2 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
