@@ -7,6 +7,7 @@ class User(models.Model):
     def __str__(self):
         return self.name
 
+
 class Article(models.Model):
     title = models.CharField(max_length=30)
     article_text = models.CharField(max_length=1000)

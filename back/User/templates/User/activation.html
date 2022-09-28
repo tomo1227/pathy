@@ -4,12 +4,7 @@
 
 {% block text_body %}
 
-テスト
-
-以下リンクから本登録を完了してください
-{{ protocol }}://{{ domein }}/{{ url|safe }}
-
-
-
+<p>以下リンクから本登録を完了してください</p>p>
+<a href="{{ protocol }}://{{ domain }}/{{ url|safe }}">{{ protocol }}://{{ domain }}/{{ url|safe }}</a>
 
 {% endblock text_body %}

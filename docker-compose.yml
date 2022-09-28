@@ -13,7 +13,7 @@ services:
       - ./web/log/nginx/:/var/log/nginx/
       - ./web/uwsgi_params:/etc/nginx/uwsgi_params
       #staticファイル
-      - ./static:/static
+      - ./web/static:/static
     ports:
       - "8000:8000" #ポート指定、ホスト:コンテナ
     depends_on:
@@ -37,7 +37,7 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - ./db/mysql/:/var/lib/mysql/
-      - ./db/log/mysql/:/var/log/mysql/
+      #- ./db/log/mysql/:/var/log/mysql/
     networks:
       - pathy_net
 
@@ -51,7 +51,7 @@ services:
     command: uwsgi --ini /etc/nginx/uwsgi.ini
     volumes:
       - ./back:/opt/pathy
-      - ./static:/static
+      - ./web/static:/static
       - ./web/uwsgi.ini:/etc/nginx/uwsgi.ini
     expose:
       - "8001"

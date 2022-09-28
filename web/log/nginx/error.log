@@ -250,3 +250,200 @@
 2022/09/18 19:18:45 [notice] 1#1: start worker process 23
 2022/09/18 19:19:19 [error] 22#22: *2 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
 2022/09/18 19:19:22 [error] 22#22: *2 upstream prematurely closed connection while reading response header from upstream, client: 172.28.0.1, server: 127.0.0.1, request: "GET /user HTTP/1.1", upstream: "uwsgi://172.28.0.5:8001", host: "localhost:8000"
+2022/09/20 13:54:51 [notice] 1#1: using the "epoll" event method
+2022/09/20 13:54:51 [notice] 1#1: nginx/1.23.1
+2022/09/20 13:54:51 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/20 13:54:51 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/20 13:54:51 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/20 13:54:51 [notice] 1#1: start worker processes
+2022/09/20 13:54:51 [notice] 1#1: start worker process 21
+2022/09/20 13:54:51 [notice] 1#1: start worker process 22
+2022/09/20 13:59:35 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/20 13:59:35 [notice] 21#21: gracefully shutting down
+2022/09/20 13:59:35 [notice] 22#22: gracefully shutting down
+2022/09/20 13:59:35 [notice] 22#22: exiting
+2022/09/20 13:59:35 [notice] 22#22: exit
+2022/09/20 13:59:35 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/20 13:59:35 [notice] 1#1: worker process 22 exited with code 0
+2022/09/20 13:59:36 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/20 13:59:49 [notice] 1#1: using the "epoll" event method
+2022/09/20 13:59:49 [notice] 1#1: nginx/1.23.1
+2022/09/20 13:59:49 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/20 13:59:49 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/20 13:59:49 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/20 13:59:49 [notice] 1#1: start worker processes
+2022/09/20 13:59:49 [notice] 1#1: start worker process 22
+2022/09/20 13:59:49 [notice] 1#1: start worker process 23
+2022/09/20 14:06:41 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/20 14:06:41 [notice] 22#22: gracefully shutting down
+2022/09/20 14:06:41 [notice] 23#23: gracefully shutting down
+2022/09/20 14:06:41 [notice] 23#23: exiting
+2022/09/20 14:06:41 [notice] 23#23: exit
+2022/09/20 14:06:41 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/20 14:06:41 [notice] 1#1: worker process 23 exited with code 0
+2022/09/20 14:06:41 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/20 14:06:55 [notice] 1#1: using the "epoll" event method
+2022/09/20 14:06:55 [notice] 1#1: nginx/1.23.1
+2022/09/20 14:06:55 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/20 14:06:55 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/20 14:06:55 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/20 14:06:55 [notice] 1#1: start worker processes
+2022/09/20 14:06:55 [notice] 1#1: start worker process 22
+2022/09/20 14:06:55 [notice] 1#1: start worker process 23
+2022/09/20 14:20:51 [error] 22#22: *43 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/auth/users/me/ HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/20 14:21:41 [error] 22#22: *43 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/auth/jwt/create HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/20 14:22:11 [error] 22#22: *43 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/auth/jwt/create HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/20 14:22:59 [error] 22#22: *43 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/auth/jwt/create HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/20 14:23:12 [error] 22#22: *43 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/auth/ HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/20 14:43:59 [error] 22#22: *97 upstream prematurely closed connection while reading response header from upstream, client: 172.29.0.1, server: 127.0.0.1, request: "GET /api/token/ HTTP/1.1", upstream: "uwsgi://172.29.0.3:8001", host: "localhost:8000"
+2022/09/21 13:26:23 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/21 13:26:23 [notice] 22#22: gracefully shutting down
+2022/09/21 13:26:23 [notice] 23#23: gracefully shutting down
+2022/09/21 13:26:23 [notice] 23#23: exiting
+2022/09/21 13:26:23 [notice] 23#23: exit
+2022/09/21 13:26:23 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/21 13:26:23 [notice] 1#1: worker process 23 exited with code 0
+2022/09/21 13:26:23 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/21 13:26:39 [notice] 1#1: using the "epoll" event method
+2022/09/21 13:26:39 [notice] 1#1: nginx/1.23.1
+2022/09/21 13:26:39 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/21 13:26:39 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/21 13:26:39 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/21 13:26:39 [notice] 1#1: start worker processes
+2022/09/21 13:26:39 [notice] 1#1: start worker process 22
+2022/09/21 13:26:39 [notice] 1#1: start worker process 23
+2022/09/21 14:30:03 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/21 14:30:03 [notice] 23#23: gracefully shutting down
+2022/09/21 14:30:03 [notice] 22#22: gracefully shutting down
+2022/09/21 14:30:03 [notice] 22#22: exiting
+2022/09/21 14:30:03 [notice] 22#22: exit
+2022/09/21 14:30:03 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/21 14:30:03 [notice] 1#1: worker process 22 exited with code 0
+2022/09/21 14:30:03 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/21 14:30:18 [notice] 1#1: using the "epoll" event method
+2022/09/21 14:30:18 [notice] 1#1: nginx/1.23.1
+2022/09/21 14:30:18 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/21 14:30:18 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/21 14:30:18 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/21 14:30:18 [notice] 1#1: start worker processes
+2022/09/21 14:30:18 [notice] 1#1: start worker process 22
+2022/09/21 14:30:18 [notice] 1#1: start worker process 23
+2022/09/22 17:46:00 [error] 23#23: *455 open() "/static/rest_framework/css/bootstrap.min.css.map" failed (2: No such file or directory), client: 172.29.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css.map HTTP/1.1", host: "localhost:8000"
+2022/09/22 18:01:30 [error] 23#23: *459 open() "/static/rest_framework/css/bootstrap.min.css.map" failed (2: No such file or directory), client: 172.29.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css.map HTTP/1.1", host: "localhost:8000"
+2022/09/22 18:01:31 [error] 23#23: *459 open() "/static/rest_framework/css/bootstrap.min.css.map" failed (2: No such file or directory), client: 172.29.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css.map HTTP/1.1", host: "localhost:8000"
+2022/09/26 13:42:18 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/26 13:42:18 [notice] 22#22: gracefully shutting down
+2022/09/26 13:42:18 [notice] 23#23: gracefully shutting down
+2022/09/26 13:42:18 [notice] 22#22: exiting
+2022/09/26 13:42:18 [notice] 22#22: exit
+2022/09/26 13:42:18 [notice] 23#23: exiting
+2022/09/26 13:42:18 [notice] 23#23: exit
+2022/09/26 13:42:18 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/26 13:42:18 [notice] 1#1: worker process 23 exited with code 0
+2022/09/26 13:42:18 [notice] 1#1: signal 29 (SIGIO) received
+2022/09/26 13:42:18 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/26 13:42:18 [notice] 1#1: worker process 22 exited with code 0
+2022/09/26 13:42:18 [notice] 1#1: exit
+2022/09/26 13:43:05 [notice] 1#1: using the "epoll" event method
+2022/09/26 13:43:05 [notice] 1#1: nginx/1.23.1
+2022/09/26 13:43:05 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/26 13:43:05 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/26 13:43:05 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/26 13:43:05 [notice] 1#1: start worker processes
+2022/09/26 13:43:05 [notice] 1#1: start worker process 22
+2022/09/26 13:43:05 [notice] 1#1: start worker process 23
+2022/09/26 14:03:08 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/26 14:03:08 [notice] 23#23: gracefully shutting down
+2022/09/26 14:03:08 [notice] 22#22: gracefully shutting down
+2022/09/26 14:03:08 [notice] 23#23: exiting
+2022/09/26 14:03:08 [notice] 22#22: exiting
+2022/09/26 14:03:08 [notice] 23#23: exit
+2022/09/26 14:03:08 [notice] 22#22: exit
+2022/09/26 14:03:08 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/26 14:03:08 [notice] 1#1: worker process 22 exited with code 0
+2022/09/26 14:03:08 [notice] 1#1: worker process 23 exited with code 0
+2022/09/26 14:03:08 [notice] 1#1: exit
+2022/09/26 14:04:35 [notice] 1#1: using the "epoll" event method
+2022/09/26 14:04:35 [notice] 1#1: nginx/1.23.1
+2022/09/26 14:04:35 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/26 14:04:35 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/26 14:04:35 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/26 14:04:35 [notice] 1#1: start worker processes
+2022/09/26 14:04:35 [notice] 1#1: start worker process 22
+2022/09/26 14:04:35 [notice] 1#1: start worker process 23
+2022/09/26 14:19:06 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/26 14:19:06 [notice] 22#22: gracefully shutting down
+2022/09/26 14:19:06 [notice] 23#23: gracefully shutting down
+2022/09/26 14:19:06 [notice] 22#22: exiting
+2022/09/26 14:19:06 [notice] 23#23: exiting
+2022/09/26 14:19:06 [notice] 22#22: exit
+2022/09/26 14:19:06 [notice] 23#23: exit
+2022/09/26 14:19:06 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/09/26 14:19:06 [notice] 1#1: worker process 22 exited with code 0
+2022/09/26 14:19:06 [notice] 1#1: worker process 23 exited with code 0
+2022/09/26 14:19:06 [notice] 1#1: exit
+2022/09/26 14:31:08 [notice] 1#1: using the "epoll" event method
+2022/09/26 14:31:08 [notice] 1#1: nginx/1.23.1
+2022/09/26 14:31:08 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/26 14:31:08 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/26 14:31:08 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/26 14:31:08 [notice] 1#1: start worker processes
+2022/09/26 14:31:08 [notice] 1#1: start worker process 22
+2022/09/26 14:31:08 [notice] 1#1: start worker process 23
+2022/09/26 15:14:54 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/26 15:14:54 [notice] 22#22: gracefully shutting down
+2022/09/26 15:14:54 [notice] 23#23: gracefully shutting down
+2022/09/26 15:14:54 [notice] 22#22: exiting
+2022/09/26 15:14:54 [notice] 22#22: exit
+2022/09/26 15:14:54 [notice] 23#23: exiting
+2022/09/26 15:14:54 [notice] 23#23: exit
+2022/09/26 15:14:54 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/26 15:14:54 [notice] 1#1: worker process 22 exited with code 0
+2022/09/26 15:14:54 [notice] 1#1: worker process 23 exited with code 0
+2022/09/26 15:14:54 [notice] 1#1: exit
+2022/09/26 15:19:48 [notice] 1#1: using the "epoll" event method
+2022/09/26 15:19:48 [notice] 1#1: nginx/1.23.1
+2022/09/26 15:19:48 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/26 15:19:48 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/26 15:19:48 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/26 15:19:48 [notice] 1#1: start worker processes
+2022/09/26 15:19:48 [notice] 1#1: start worker process 21
+2022/09/26 15:19:48 [notice] 1#1: start worker process 22
+2022/09/26 15:49:10 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/09/26 15:49:10 [notice] 22#22: gracefully shutting down
+2022/09/26 15:49:10 [notice] 21#21: gracefully shutting down
+2022/09/26 15:49:10 [notice] 22#22: exiting
+2022/09/26 15:49:10 [notice] 21#21: exiting
+2022/09/26 15:49:10 [notice] 22#22: exit
+2022/09/26 15:49:10 [notice] 21#21: exit
+2022/09/26 15:49:10 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/09/26 15:49:10 [notice] 1#1: worker process 22 exited with code 0
+2022/09/26 15:49:10 [notice] 1#1: worker process 21 exited with code 0
+2022/09/26 15:49:10 [notice] 1#1: exit
+2022/09/26 15:49:52 [notice] 1#1: using the "epoll" event method
+2022/09/26 15:49:52 [notice] 1#1: nginx/1.23.1
+2022/09/26 15:49:52 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/09/26 15:49:52 [notice] 1#1: OS: Linux 5.10.104-linuxkit
+2022/09/26 15:49:52 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/09/26 15:49:52 [notice] 1#1: start worker processes
+2022/09/26 15:49:52 [notice] 1#1: start worker process 23
+2022/09/26 15:49:52 [notice] 1#1: start worker process 24
+2022/09/27 11:49:23 [error] 24#24: *4 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 23#23: *3 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 23#23: *3 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 24#24: *4 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 23#23: *9 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 24#24: *10 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 23#23: *11 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 24#24: *4 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 23#23: *3 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 11:49:23 [error] 24#24: *12 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 192.168.32.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/auth/users/"
+2022/09/27 12:30:48 [error] 24#24: *113 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Ng/bcfi1c-4b3165481f341897a5d8d3fad6d291e6 HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 12:46:34 [error] 23#23: *116 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Ng/bcfi1c-4b3165481f341897a5d8d3fad6d291e6 HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 12:46:43 [error] 23#23: *116 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Ng/bcfi1c-4b3165481f341897a5d8d3fad6d291e6 HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 12:46:46 [error] 23#23: *116 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Ng/bcfi1c-4b3165481f341897a5d8d3fad6d291e6 HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 12:46:59 [error] 23#23: *116 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/ HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 12:48:06 [error] 23#23: *116 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/ HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 13:06:24 [error] 23#23: *161 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Ng/bcfi1c-4b3165481f341897a5d8d3fad6d291e6/ HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
+2022/09/27 13:06:44 [error] 23#23: *168 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /admin/user/myuser/ HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000", referrer: "http://localhost:8000/admin/user/myuser/6/change/"
+2022/09/27 13:37:58 [error] 23#23: *186 upstream prematurely closed connection while reading response header from upstream, client: 192.168.32.1, server: 127.0.0.1, request: "GET /api/auth/users/activation/Nw/bcfk4u-5f4914c1111bef0604fd459ec5ed307d/ HTTP/1.1", upstream: "uwsgi://192.168.32.3:8001", host: "localhost:8000"
