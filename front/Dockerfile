@@ -12,4 +12,5 @@ RUN npm install -g @vue/cli && \
 # RUN npm install axios
 RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y", "vim"]
+RUN ["apt-get", "install", "-y", "curl"]
 COPY . ${WORKDIR}/
