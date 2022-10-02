@@ -3,7 +3,7 @@ from django.urls import path, include
 
 from memo.urls import router as memo_router
 
-BASE_URL_API = 'api/'
+BASE_URL_API = 'api/v1/'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
