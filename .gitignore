@@ -1,1 +1,3 @@
 /db/mysql
+/db/log/mysql/
+/web/log/nginx/
