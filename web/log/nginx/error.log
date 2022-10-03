@@ -306,3 +306,13 @@
 2022/10/02 15:16:30 [error] 23#23: *100 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.21.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
 2022/10/02 15:16:31 [error] 23#23: *98 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.21.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
 2022/10/02 15:16:31 [error] 23#23: *101 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.21.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/03 13:34:00 [notice] 1#1: using the "epoll" event method
+2022/10/03 13:34:00 [notice] 1#1: nginx/1.23.1
+2022/10/03 13:34:00 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/10/03 13:34:00 [notice] 1#1: OS: Linux 5.10.124-linuxkit
+2022/10/03 13:34:00 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/10/03 13:34:00 [notice] 1#1: start worker processes
+2022/10/03 13:34:00 [notice] 1#1: start worker process 21
+2022/10/03 13:34:00 [notice] 1#1: start worker process 22
+2022/10/03 13:40:08 [error] 21#21: *1 connect() failed (111: Connection refused) while connecting to upstream, client: 172.22.0.1, server: 127.0.0.1, request: "GET /api/v1/memo/articles/1/ HTTP/1.1", upstream: "uwsgi://172.22.0.4:3000", host: "localhost:8000", referrer: "http://localhost:8080/"
+2022/10/03 13:40:08 [warn] 21#21: *1 upstream server temporarily disabled while connecting to upstream, client: 172.22.0.1, server: 127.0.0.1, request: "GET /api/v1/memo/articles/1/ HTTP/1.1", upstream: "uwsgi://172.22.0.4:3000", host: "localhost:8000", referrer: "http://localhost:8080/"
