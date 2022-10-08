@@ -1,6 +1,6 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="edit">
+    <h1>Hello Markdown Editor</h1>
     <HelloMarkdown />
   </div>
 </template>
@@ -10,9 +10,21 @@
 import HelloMarkdown from "@/components/HelloMarkdown.vue";
 
 export default {
-  name: "AboutView",
+  name: "EditView",
   components: {
     HelloMarkdown,
   },
 };
 </script>
+
+<style>
+div {
+  margin: 0;
+  height: 100%;
+}
+
+#edit {
+  margin: 0;
+  height: 100%;
+}
+</style>

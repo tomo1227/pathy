@@ -1,39 +1,49 @@
 <template>
   <div id="editor">
-    <textarea :value="input" @input="update"></textarea>
-    <div v-html="compiledMarkdown"></div>
+    <textarea :value="markdownText" @input="update"></textarea>
+    <div class="preview" v-html="compiledMarkdown"></div>
   </div>
 </template>
 
 <script>
-import _ from "lodash";
+import * as DOMPurify from "dompurify";
+import hljs from "highlight.js";
+import "highlight.js/styles/base16/solarized-dark.css";
 import { marked } from "marked";
+import debounce from "lodash/debounce";
 
 export default {
-  data() {
-    return {
-      input: "# hello",
-    };
+  name: "postForm",
+  created: function () {
+    marked.setOptions({
+      langPrefix: "hljs language-",
+      highlight: function (code, lang) {
+        return hljs.highlightAuto(code, [lang]).value;
+      },
+    });
   },
   computed: {
-    compiledMarkdown() {
-      return marked(this.input, { sanitize: true });
+    compiledMarkdown: function () {
+      return DOMPurify.sanitize(marked(this.markdownText));
     },
   },
   methods: {
-    update: _.debounce(function (e) {
-      this.input = e.target.value;
+    update: debounce(function (e) {
+      this.markdownText = e.target.value;
     }, 300),
+  },
+  data: function () {
+    return {
+      markdownText: "# Hello Markdown!!",
+    };
   },
 };
 </script>
 
 <style>
-html,
-body,
 #editor {
   margin: 0;
-  height: 100%;
+  height: 70%;
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: #333;
 }
@@ -54,12 +64,18 @@ textarea {
   resize: none;
   outline: none;
   background-color: #f6f6f6;
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Monaco", courier, monospace;
   padding: 20px;
 }
 
+pre code.hljs {
+  padding: 0.2em;
+}
+
 code {
-  color: #f66;
+  font-size: 18px;
+  background-color: rgb(190, 190, 190);
+  padding: 0.2em;
 }
 </style>

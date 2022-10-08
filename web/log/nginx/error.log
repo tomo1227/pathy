@@ -50,3 +50,95 @@
 2022/10/03 16:04:41 [notice] 1#1: start worker processes
 2022/10/03 16:04:41 [notice] 1#1: start worker process 22
 2022/10/03 16:04:41 [notice] 1#1: start worker process 23
+2022/10/04 14:47:52 [notice] 1#1: signal 3 (SIGQUIT) received, shutting down
+2022/10/04 14:47:52 [notice] 22#22: gracefully shutting down
+2022/10/04 14:47:52 [notice] 23#23: gracefully shutting down
+2022/10/04 14:47:52 [notice] 22#22: exiting
+2022/10/04 14:47:52 [notice] 23#23: exiting
+2022/10/04 14:47:52 [notice] 23#23: exit
+2022/10/04 14:47:52 [notice] 22#22: exit
+2022/10/04 14:47:52 [notice] 1#1: signal 17 (SIGCHLD) received from 22
+2022/10/04 14:47:52 [notice] 1#1: worker process 22 exited with code 0
+2022/10/04 14:47:52 [notice] 1#1: signal 29 (SIGIO) received
+2022/10/04 14:47:52 [notice] 1#1: signal 17 (SIGCHLD) received from 23
+2022/10/04 14:47:52 [notice] 1#1: worker process 23 exited with code 0
+2022/10/04 14:47:52 [notice] 1#1: exit
+2022/10/04 14:49:37 [emerg] 1#1: host not found in upstream "front:3000" in /etc/nginx/conf.d/nginx.conf:6
+2022/10/04 14:58:43 [notice] 1#1: using the "epoll" event method
+2022/10/04 14:58:43 [notice] 1#1: nginx/1.23.1
+2022/10/04 14:58:43 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/10/04 14:58:43 [notice] 1#1: OS: Linux 5.10.124-linuxkit
+2022/10/04 14:58:43 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/10/04 14:58:43 [notice] 1#1: start worker processes
+2022/10/04 14:58:43 [notice] 1#1: start worker process 22
+2022/10/04 14:58:43 [notice] 1#1: start worker process 23
+2022/10/04 14:58:50 [error] 22#22: *1 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *7 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 22#22: *2 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *4 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 22#22: *1 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *5 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 22#22: *2 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *6 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *7 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:50 [error] 23#23: *4 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:54 [error] 22#22: *1 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *6 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:54 [error] 22#22: *2 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *7 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 22#22: *1 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *5 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 22#22: *2 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *4 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *6 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:58:55 [error] 23#23: *7 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 22#22: *2 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *6 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 22#22: *1 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *7 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 22#22: *2 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *4 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 22#22: *1 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *5 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *6 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:09 [error] 23#23: *7 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *7 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 22#22: *2 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *5 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 22#22: *1 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *6 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 22#22: *2 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *4 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 22#22: *1 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *7 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/04 14:59:16 [error] 23#23: *5 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 10:01:38 [notice] 1#1: signal 15 (SIGTERM) received, exiting
+2022/10/06 10:01:38 [notice] 22#22: signal 15 (SIGTERM) received, exiting
+2022/10/06 10:01:38 [notice] 22#22: exiting
+2022/10/06 10:01:38 [notice] 23#23: signal 15 (SIGTERM) received, exiting
+2022/10/06 14:53:42 [notice] 1#1: using the "epoll" event method
+2022/10/06 14:53:42 [notice] 1#1: nginx/1.23.1
+2022/10/06 14:53:42 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/10/06 14:53:42 [notice] 1#1: OS: Linux 5.10.124-linuxkit
+2022/10/06 14:53:42 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/10/06 14:53:42 [notice] 1#1: start worker processes
+2022/10/06 14:53:42 [notice] 1#1: start worker process 22
+2022/10/06 14:53:42 [notice] 1#1: start worker process 23
+2022/10/06 15:02:32 [error] 22#22: *6 open() "/static/rest_framework/css/prettify.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/prettify.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 23#23: *4 open() "/static/rest_framework/css/bootstrap.min.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 22#22: *6 open() "/static/rest_framework/css/default.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/default.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 23#23: *3 open() "/static/rest_framework/css/bootstrap-tweaks.css" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 22#22: *6 open() "/static/rest_framework/js/ajax-form.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/ajax-form.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 23#23: *4 open() "/static/rest_framework/js/jquery-3.5.1.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/jquery-3.5.1.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 22#22: *6 open() "/static/rest_framework/js/bootstrap.min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 23#23: *3 open() "/static/rest_framework/js/csrf.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/csrf.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 22#22: *6 open() "/static/rest_framework/js/default.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/default.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 15:02:32 [error] 23#23: *4 open() "/static/rest_framework/js/prettify-min.js" failed (2: No such file or directory), client: 172.27.0.1, server: 127.0.0.1, request: "GET /static/rest_framework/js/prettify-min.js HTTP/1.1", host: "localhost:8000", referrer: "http://localhost:8000/api/v1/memo/articles/1/"
+2022/10/06 16:22:24 [notice] 1#1: using the "epoll" event method
+2022/10/06 16:22:24 [notice] 1#1: nginx/1.23.1
+2022/10/06 16:22:24 [notice] 1#1: built by gcc 10.2.1 20210110 (Debian 10.2.1-6) 
+2022/10/06 16:22:24 [notice] 1#1: OS: Linux 5.10.124-linuxkit
+2022/10/06 16:22:24 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+2022/10/06 16:22:24 [notice] 1#1: start worker processes
+2022/10/06 16:22:24 [notice] 1#1: start worker process 22
+2022/10/06 16:22:24 [notice] 1#1: start worker process 23
