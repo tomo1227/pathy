@@ -1,13 +1,24 @@
 <template>
-  <nav>
+  <nav class="menu">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/edit">Editor</router-link>
   </nav>
   <router-view />
 </template>
 
 <style>
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+}
+
 #app {
+  margin: 0;
+  height: 100%;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,8 +26,12 @@
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+nav,
+menu {
+  display: block;
+  margin: 0;
+  height: 10px;
+  padding: 20px;
 }
 
 nav a {
