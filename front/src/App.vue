@@ -16,15 +16,6 @@ body {
   height: 100%;
 }
 
-nav {
-  margin: 0;
-  height: 10%;
-}
-
-router-view {
-  margin: 0;
-  height: 90%;
-}
 #app {
   margin: 0;
   height: 100%;
@@ -35,8 +26,12 @@ router-view {
   color: #2c3e50;
 }
 
-nav {
-  padding: 30px;
+nav,
+menu {
+  display: block;
+  margin: 0;
+  height: 10px;
+  padding: 20px;
 }
 
 nav a {

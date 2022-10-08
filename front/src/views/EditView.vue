@@ -1,6 +1,6 @@
 <template>
-  <div class="edit">
-    <h1>Hello Markdown Editor</h1>
+  <div id="mdeditor">
+    <h1>Markdown Editor</h1>
     <HelloMarkdown />
   </div>
 </template>
@@ -18,13 +18,14 @@ export default {
 </script>
 
 <style>
-div {
+#mdeditor {
   margin: 0;
   height: 100%;
 }
 
-#edit {
-  margin: 0;
-  height: 100%;
+#mdeditor,
+h1 {
+  font-size: 30px;
+  padding: 5px;
 }
 </style>
