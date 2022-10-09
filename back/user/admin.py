@@ -4,7 +4,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.core.exceptions import ValidationError
 
-from back.user.models import MyUser
+from user.models import MyUser
 
 
 class UserCreationForm(forms.ModelForm):
