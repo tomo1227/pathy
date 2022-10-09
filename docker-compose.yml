@@ -37,6 +37,7 @@ services:
       TZ: 'Asia/Tokyo'
     volumes:
       - ./db/mysql/:/var/lib/mysql/
+      - ./db/dumps/:/dumps/
       #- ./db/log/mysql/:/var/log/mysql/
     networks:
       - pathy_net
