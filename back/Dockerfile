@@ -11,10 +11,10 @@ RUN mkdir -p /var/log/uwsgi/ && touch uwsgi.log
 # 各種命令実行のカレントディレクトリを指定
 WORKDIR ${WORKDIR}
 # ローカルのrequirements.txtをコンテナ内のにコピー
-ADD requirements.txt ${WORKDIR}
+COPY requirements.txt ${WORKDIR}
 # コマンド実行
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 RUN ["apt-get", "update"]
 RUN ["apt-get", "install", "-y", "vim"]
-ADD . ${WORKDIR}/
+COPY . ${WORKDIR}/

@@ -2,6 +2,8 @@ Django==4.1
 uwsgi==2.0.20
 PyMySQL==1.0.2
 django-cors-headers==3.13.0
-#vue.jsに必要かもrestapi
 djangorestframework==3.13.1
 django-filter==22.1
+djangorestframework-simplejwt==4.8.0
+PyJWT==2.5.0
+djoser==2.1.0
