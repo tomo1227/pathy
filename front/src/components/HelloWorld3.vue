@@ -21,8 +21,15 @@ export default {
       title: "",
       article_text: "",
     });
+    const token =
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1Mzg4NTg0LCJqdGkiOiI0ODFjNzBjYmQ0OTI0YTFiYmIxZGFiMDJiYjk4NjQyOSIsInVzZXJfaWQiOjF9.FiGR5FoTXRxLMlrHcVQFXBxj5XebB4H7fmg6gfg8odQ";
+
     const getData = async () => {
-      let result = await axios.get("/memo/articles/1/");
+      let result = await axios.get("memo/articles/1/", {
+        headers: {
+          Authorization: `JWT ${token}`,
+        },
+      });
       data.title = result.data.title;
       data.article_text = result.data.article_text;
     };

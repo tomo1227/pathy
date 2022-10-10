@@ -138,7 +138,7 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": datetime.timedelta(days=30),
     "ROTATE_REFRESH_TOKENS": True,
     "UPDATE_LAST_LOGIN": True,
-    "AUTH_HEADER_TYPES": ("JWT",),
+    "AUTH_HEADER_TYPES": ("Bearer",),
     "AUTH_TOKEN_CLASSLES": ("rest_framework_simplejwt.tokens.AccessToken",),
 }
 
@@ -197,14 +197,15 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 # SMTPサーバーアドレス
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
+# 配信元メール
 EMAIL_HOST_USER = "ここに配信元メール入れる"
-EMAIL_HOST_PASSWORD = "ここにパスワード"
+# ここにパスワード
+EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = True
 # DEFAULT_FROM_EMAIL = 'xxx@gmail.com'
 
-"""本番ではこんな感じで環境変数に書いたの取る
-EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
-EMAIL_PORT = os.environ.get('EMAIL_PORT', '587')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'administrator')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'password')
-"""
+# 本番ではこんな感じで環境変数に書いたの取る
+# EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')
+# EMAIL_PORT = os.environ.get('EMAIL_PORT', '587')
+# EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'administrator')
+# EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'password')
