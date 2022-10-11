@@ -17,8 +17,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
-    "user.apps.UserConfig",
-    "memo.apps.MemoConfig",
+    "apps.user.apps.UserConfig",
+    "apps.memo.apps.MemoConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -198,7 +198,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 # 配信元メール
-EMAIL_HOST_USER = "ここに配信元メール入れる"
+EMAIL_HOST_USER = ""
 # ここにパスワード
 EMAIL_HOST_PASSWORD = ""
 EMAIL_USE_TLS = True
