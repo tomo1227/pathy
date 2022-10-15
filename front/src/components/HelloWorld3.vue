@@ -13,6 +13,8 @@
 <script>
 import axios from "axios";
 import { reactive, onMounted } from "vue";
+import { useAuthStore } from "@/stores/auth";
+import { storeToRefs } from "pinia";
 
 export default {
   setup() {
@@ -21,13 +23,13 @@ export default {
       title: "",
       article_text: "",
     });
-    const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjY1Mzg4NTg0LCJqdGkiOiI0ODFjNzBjYmQ0OTI0YTFiYmIxZGFiMDJiYjk4NjQyOSIsInVzZXJfaWQiOjF9.FiGR5FoTXRxLMlrHcVQFXBxj5XebB4H7fmg6gfg8odQ";
+    const store = useAuthStore();
+    const { accessToken } = storeToRefs(store);
 
     const getData = async () => {
-      let result = await axios.get("memo/articles/1/", {
+      let result = await axios.get("auth/users/me/", {
         headers: {
-          Authorization: `JWT ${token}`,
+          Authorization: `Bearer ${accessToken.value}`,
         },
       });
       data.title = result.data.title;

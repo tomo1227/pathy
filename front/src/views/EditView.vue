@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloMarkdown from "@/components/HelloMarkdown.vue";
 
 export default {
