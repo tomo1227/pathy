@@ -1,10 +1,28 @@
+<script setup>
+import { useAuthStore } from "@/stores/auth";
+// import { storeToRefs } from "pinia";
+
+const store = useAuthStore();
+// const { loginState } = storeToRefs(store);
+</script>
+
 <template>
-  <nav class="menu">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/edit">Editor</router-link> |
-    <router-link to="/login">Login</router-link> |
-    <router-link to="/logout">Logout</router-link>
-  </nav>
+  <header>
+    <div class="header__inner">
+      <h3 class="header__title header-title">
+        <a href="/">
+          <img alt="Pathy ロゴ" src="@/assets/header_logo.png" width="100" />
+        </a>
+      </h3>
+      <nav class="menu">
+        <router-link to="/" v-show="store.loginState">Home</router-link> |
+        <router-link to="/edit" v-show="store.loginState">Editor</router-link> |
+        <router-link to="/login" v-show="!store.loginState">Login</router-link>
+        |
+        <router-link to="/logout" v-show="store.loginState">Logout</router-link>
+      </nav>
+    </div>
+  </header>
   <router-view />
 </template>
 

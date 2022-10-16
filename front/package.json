@@ -21,6 +21,7 @@
     "highlight.js": "^11.6.0",
     "marked": "^4.1.1",
     "pinia": "^2.0.23",
+    "pinia-plugin-persistedstate": "^2.3.0",
     "vue": "^3.2.13",
     "vue-axios": "^3.4.1",
     "vue-router": "^4.0.3"
