@@ -37,21 +37,25 @@ export default {
             Authorization: `Bearer ${accessToken.value}`,
           },
         })
+        // HACK: トークンrefresh処理は共通処理としてまとめる必要がある
         .then((response) => {
           data.title = response.data.username;
           data.article_text = response.data.email;
         })
         .catch((error) => {
           if (error.response?.status === 401) {
+            // 401エラーが起きたとき、トークンrefresh
             axios
               .post("auth/jwt/refresh", {
                 refresh: `${refreshToken.value}`,
               })
               .then((response) => {
+                // storeのトークン更新
                 store.refresh(response.data.access, response.data.refresh);
                 console.log(accessToken.value);
               })
               .catch(() => {
+                // トークンrefresh出来なかったら、ログアウトしてログイン画面へ
                 store.logout();
                 router.push("/login");
               });

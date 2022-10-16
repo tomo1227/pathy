@@ -4,6 +4,7 @@ import { ref } from "vue";
 export const useAuthStore = defineStore(
   "auth",
   () => {
+    // loginState=true → ログイン中
     const loginState = ref(false);
     const email = ref("");
     const accessToken = ref("");
@@ -42,7 +43,7 @@ export const useAuthStore = defineStore(
     };
   },
   {
-    // storeの永続化
+    // Storeの永続化
     persist: true,
   }
 );

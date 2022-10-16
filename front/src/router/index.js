@@ -41,11 +41,11 @@ const router = createRouter({
 router.beforeEach((to, from, next) => {
   const store = useAuthStore();
   const { loginState } = storeToRefs(store);
-  // 権限がいるページ、かつログインできていない → ログイン画面へ
   if (
     to.matched.some((record) => record.meta.requiresAuth) &&
     !loginState.value
   ) {
+    // 権限がいるページ、かつログインできていない → ログイン画面へ
     next({ path: "/login", query: { redirect: to.fullPath } });
   } else {
     next();

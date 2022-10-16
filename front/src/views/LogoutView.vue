@@ -6,11 +6,13 @@ const router = useRouter();
 const store = useAuthStore();
 
 const logout = () => {
+  // ログアウトしたら、ログイン画面へ
   store.logout();
   router.push("/login");
 };
 
 const nologout = () => {
+  // ログアウトしないなら、Home画面へ
   router.push("/");
 };
 </script>
