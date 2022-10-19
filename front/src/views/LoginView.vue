@@ -30,21 +30,28 @@ const login = () => {
 <template>
   <div class="login">
     <h1>Login</h1>
-    <div class="form-item">
-      <label for="email">Email</label>
-      <input id="email" autocomplete="off" type="email" v-model="email" />
+    <div class="form-group">
+      <label for="Email">Email</label>
+      <input
+        class="form-control"
+        id="email"
+        autocomplete="on"
+        type="email"
+        v-model="email"
+        placeholder="メールアドレス"
+      />
     </div>
-    <div class="form-item">
+    <div class="form-group">
       <label for="password">Password</label>
       <input
         id="password"
+        class="form-control"
         autocomplete="off"
         type="password"
         v-model="password"
+        placeholder="パスワード"
       />
     </div>
-    <div class="form-item">
-      <button class="submit btn" @click="login">Login</button>
-    </div>
+    <button type="button" class="btn btn-primary" @click="login">Login</button>
   </div>
 </template>

@@ -5,14 +5,14 @@ import { useAuthStore } from "@/stores/auth";
 const router = useRouter();
 const store = useAuthStore();
 
+// ログアウト → ログイン画面へ
 const logout = () => {
-  // ログアウトしたら、ログイン画面へ
   store.logout();
   router.push("/login");
 };
 
+// ログアウトしない → Home画面へ
 const nologout = () => {
-  // ログアウトしないなら、Home画面へ
   router.push("/");
 };
 </script>
