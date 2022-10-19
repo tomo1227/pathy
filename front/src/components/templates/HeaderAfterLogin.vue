@@ -1,19 +1,15 @@
 <script setup>
-import { useAuthStore } from "@/stores/auth";
-
-const store = useAuthStore();
+import HeaderLogo from "@/components/parts/HeaderLogo";
 </script>
 
 <template>
   <div id="header_logo" class="header_items">
-    <a href="/">
-      <img alt="Pathy ロゴ" src="@/assets/header_logo.png" width="100" />
-    </a>
+    <HeaderLogo />
   </div>
   <div id="header_menu" class="header_items">
     <!-- ログイン後 begin-->
-    <nav class="menu" v-show="store.loginState">
-      <router-link to="/" v-show="store.loginState">Home</router-link>
+    <nav class="menu">
+      <router-link to="/">Home</router-link>
       <router-link to="/edit">Editor</router-link>
       <router-link to="/logout">Logout</router-link>
       <!-- ログイン後 end-->
@@ -28,9 +24,9 @@ const store = useAuthStore();
         </button>
       </form>
     </div>
-    <div id="header_login" v-show="!store.loginState">
+    <div id="header_login">
       <!-- ログイン後 begin -->
-      <nav class="menu" v-show="store.loginState">
+      <nav class="menu">
         <router-link to="/logout">ログアウト</router-link>
         <!-- ログイン後 end-->
       </nav>

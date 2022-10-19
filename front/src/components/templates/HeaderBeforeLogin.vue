@@ -1,14 +1,10 @@
 <script setup>
-import { useAuthStore } from "@/stores/auth";
-
-const store = useAuthStore();
+import HeaderLogo from "@/components/parts/HeaderLogo";
 </script>
 
 <template>
   <div id="header_logo" class="header_items">
-    <a href="/">
-      <img alt="Pathy ロゴ" src="@/assets/header_logo.png" width="100" />
-    </a>
+    <HeaderLogo />
   </div>
   <div id="header_menu" class="header_items">
     <!-- ログイン前 begin-->
