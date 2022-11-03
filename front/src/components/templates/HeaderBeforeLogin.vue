@@ -1,5 +1,6 @@
 <script setup>
 import HeaderLogo from "@/components/parts/HeaderLogo";
+import HeaderSearchBox from "@/components/parts/HeaderSearchBox";
 </script>
 
 <template>
@@ -8,28 +9,42 @@ import HeaderLogo from "@/components/parts/HeaderLogo";
   </div>
   <div id="header_menu" class="header_items">
     <!-- ログイン前 begin-->
-    <nav class="menu">
-      <router-link to="/login"> Login</router-link>
+    <nav>
+      <ul class="menu_list">
+        <li class="menu_item">
+          <router-link to="/edit" class="header_link">Login</router-link>
+        </li>
+      </ul>
+      <!-- ログイン前 end-->
     </nav>
-    <!-- ログイン前 end -->
   </div>
   <div id="header_status" class="header_items">
-    <div class="search">
-      <form id="search_form" action="自分のサイトURL" method="get">
-        <input id="search_box" type="text" placeholder="検索" />
-        <button id="search_button" type="submit">
-          <i class="fas fa-search"></i>
-        </button>
-      </form>
+    <div id="header_search">
+      <HeaderSearchBox />
     </div>
-    <div id="header_login">
-      <!-- ログイン前 begin-->
-      <nav class="menu">
-        <router-link to="/login"> Login</router-link>
+    <div id="header_logout">
+      <!-- ログイン前 begin -->
+      <nav class="logout_btn">
+        <router-link to="/logout" id="logout_btn">Login</router-link>
+        <!-- ログイン前 end-->
       </nav>
-      <!-- ログイン前 end -->
     </div>
   </div>
 </template>
 
-.header_items { box-sizing: border-box; height: 50%; }
+<style>
+.header_items {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50%;
+}
+
+#header_login {
+  display: box;
+}
+
+#logout_btn {
+  padding: 5px;
+}
+</style>

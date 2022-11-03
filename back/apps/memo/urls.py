@@ -1,7 +1,7 @@
 from django.urls import path
-from . import views
+from apps.memo import views
 from rest_framework import routers
-from .views import ArticleViewSet
+from apps.memo.serializer import ArticleViewSet
 
 urlpatterns = [
     path('', views.index, name='index'),

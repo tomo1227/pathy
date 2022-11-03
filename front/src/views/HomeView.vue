@@ -9,7 +9,7 @@ import TimelineHome from "@/components/TimelineHome";
 </template>
 
 <style>
-div {
+.home {
   display: block;
   margin: 0;
   height: 100px;

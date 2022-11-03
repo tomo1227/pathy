@@ -48,26 +48,19 @@ onMounted(() => {
   <section class="alert alert-primary">
     <h1>タイムライン</h1>
     <div class="titles" v-for="article in articles" :key="article.id">
-      <p>{{ article.title }}</p>
+      <p id="title-timeline">"{{ article.title }}</p>
     </div>
   </section>
 </template>
 
 <style>
-/* .titles {
-  display: block;
-  margin: 0;
-  height: 50px;
-  text-align: center;
-} */
-
 .titles {
   height: 50px;
   margin: 0;
   vertical-align: middle;
 }
 
-p {
+#title-timeline {
   height: 40px;
   border: 5px solid maroon;
   margin: 5px;

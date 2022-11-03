@@ -1,18 +1,18 @@
 <template>
   <div id="mdeditor">
-    <h1>Markdown Editor</h1>
-    <HelloMarkdown />
+    <!-- <h1>Markdown Editor</h1> -->
+    <EditorHome />
   </div>
 </template>
 
 <script>
 // HACK: setup scirptで書き直す必要あり
-import HelloMarkdown from "@/components/HelloMarkdown.vue";
+import EditorHome from "@/components/EditorHome.vue";
 
 export default {
   name: "EditView",
   components: {
-    HelloMarkdown,
+    EditorHome,
   },
 };
 </script>
@@ -26,6 +26,6 @@ export default {
 #mdeditor,
 h1 {
   font-size: 30px;
-  padding: 5px;
+  padding: 2px;
 }
 </style>
