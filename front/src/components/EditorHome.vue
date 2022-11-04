@@ -5,7 +5,13 @@ import "highlight.js/styles/base16/solarized-dark.css";
 import { marked } from "marked";
 import debounce from "lodash/debounce";
 import { computed, ref } from "vue";
+import { storeToRefs } from "pinia";
+import axios from "axios";
+import { useAuthStore } from "@/stores/auth";
 
+const store = useAuthStore();
+const { email } = storeToRefs(store);
+const { accessToken } = storeToRefs(store);
 const markdownTitle = ref("Title");
 const markdownText = ref("# Hello Markdown!!");
 
@@ -30,14 +36,38 @@ const compiledMarkdown = computed(() => {
   return DOMPurify.sanitize(marked(markdownText.value));
 });
 
-const update = debounce((e) => {
+const mdTextInput = debounce((e) => {
   markdownText.value = e.target.value;
 }, 100);
+
+const submit = () => {
+  axios({
+    method: "post",
+    url: "memo/articles/",
+    data: {
+      user_email: email.value,
+      title: markdownTitle.value,
+      article_text: markdownText.value,
+    },
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${accessToken.value}`,
+    },
+  })
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      if (error.response?.status === 401) {
+        store.refreshApi();
+      }
+    });
+};
 </script>
 
 <template>
   <div id="post-btn-container">
-    <button class="post-btn-item green-btn">投稿</button>
+    <button class="post-btn-item green-btn" @click="submit">投稿</button>
     <button class="post-btn-item yellow-btn">下書き</button>
     <button class="post-btn-item red-btn">削除</button>
   </div>
@@ -54,7 +84,7 @@ const update = debounce((e) => {
     </div>
   </div>
   <div id="editor">
-    <textarea :value="markdownText" @input="update"></textarea>
+    <textarea :value="markdownText" @input="mdTextInput"></textarea>
     <div class="preview" v-html="compiledMarkdown"></div>
   </div>
 </template>

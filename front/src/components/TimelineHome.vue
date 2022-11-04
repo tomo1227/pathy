@@ -1,19 +1,16 @@
 <script setup>
 import axios from "axios";
 import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 import { storeToRefs } from "pinia";
 
 const articles = ref([]);
 const store = useAuthStore();
 const { accessToken } = storeToRefs(store);
-const { refreshToken } = storeToRefs(store);
-const router = useRouter();
 
 onMounted(() => {
   axios
-    .get("http://localhost:8000/api/v1/memo/articles", {
+    .get("memo/articles", {
       headers: {
         Authorization: `Bearer ${accessToken.value}`,
       },
@@ -25,20 +22,7 @@ onMounted(() => {
     })
     .catch((error) => {
       if (error.response?.status === 401) {
-        // 401エラーが起きたとき、トークンrefresh
-        axios
-          .post("auth/jwt/refresh", {
-            refresh: `${refreshToken.value}`,
-          })
-          .then((response) => {
-            // storeのトークン更新
-            store.refresh(response.data.access, response.data.refresh);
-          })
-          .catch(() => {
-            // トークンrefresh出来なかったら、ログアウトしてログイン画面へ
-            store.logout();
-            router.push("/login");
-          });
+        store.refreshApi();
       }
     });
 });

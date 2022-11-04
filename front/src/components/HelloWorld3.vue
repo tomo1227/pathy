@@ -14,7 +14,6 @@
 // HACK: setup scirptで書き直す必要あり
 import axios from "axios";
 import { reactive, onMounted } from "vue";
-import { useRouter } from "vue-router";
 import { useAuthStore } from "@/stores/auth";
 import { storeToRefs } from "pinia";
 
@@ -27,8 +26,6 @@ export default {
     });
     const store = useAuthStore();
     const { accessToken } = storeToRefs(store);
-    const { refreshToken } = storeToRefs(store);
-    const router = useRouter();
 
     const getData = async () => {
       await axios
@@ -45,20 +42,7 @@ export default {
         .catch((error) => {
           if (error.response?.status === 401) {
             // 401エラーが起きたとき、トークンrefresh
-            axios
-              .post("auth/jwt/refresh", {
-                refresh: `${refreshToken.value}`,
-              })
-              .then((response) => {
-                // storeのトークン更新
-                store.refresh(response.data.access, response.data.refresh);
-                console.log(accessToken.value);
-              })
-              .catch(() => {
-                // トークンrefresh出来なかったら、ログアウトしてログイン画面へ
-                store.logout();
-                router.push("/login");
-              });
+            store.refreshApi();
           }
         });
     };
