@@ -1,6 +1,7 @@
 from pathlib import Path
 import pymysql
 import datetime
+import os
 
 pymysql.install_as_MySQLdb()
 
@@ -31,6 +32,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "djoser",
     "corsheaders",
+    "django_filters",
 ]
 
 MIDDLEWARE = [
@@ -131,6 +133,12 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
+    # "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
+    "DEFAULT_FILTER_BACKENDS": (
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.OrderingFilter",
+        "rest_framework.filters.SearchFilter",
+    ),
 }
 
 SIMPLE_JWT = {
@@ -209,3 +217,19 @@ EMAIL_USE_TLS = True
 # EMAIL_PORT = os.environ.get('EMAIL_PORT', '587')
 # EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'administrator')
 # EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'password')
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "file": {
+            "level": "DEBUG",
+            "class": "logging.FileHandler",
+            "filename": "/var/log/pathy.log",
+        },
+    },
+    "root": {
+        "handlers": ["file"],
+        "level": "DEBUG",
+    },
+}

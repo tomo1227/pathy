@@ -1,4 +1,6 @@
 <script setup>
+import HeaderBeforeLogin from "@/components/templates/HeaderBeforeLogin";
+import HeaderAfterLogin from "@/components/templates/HeaderAfterLogin";
 import { useAuthStore } from "@/stores/auth";
 
 const store = useAuthStore();
@@ -6,19 +8,9 @@ const store = useAuthStore();
 
 <template>
   <header>
-    <div class="header__inner">
-      <h3 class="header__title header-title">
-        <a href="/">
-          <img alt="Pathy ロゴ" src="@/assets/header_logo.png" width="100" />
-        </a>
-      </h3>
-      <nav class="menu">
-        <router-link to="/" v-show="store.loginState">Home</router-link> |
-        <router-link to="/edit" v-show="store.loginState">Editor</router-link> |
-        <router-link to="/login" v-show="!store.loginState">Login</router-link>
-        |
-        <router-link to="/logout" v-show="store.loginState">Logout</router-link>
-      </nav>
+    <div id="header_containers">
+      <HeaderBeforeLogin v-if="!store.loginState" />
+      <HeaderAfterLogin v-else />
     </div>
   </header>
   <router-view />
@@ -44,20 +36,20 @@ body {
   color: #2c3e50;
 }
 
-nav,
-menu {
-  display: block;
+header {
+  height: 90px;
+}
+
+#header_containers {
+  display: flex;
+  justify-content: space-between;
+  color: #000;
+  background-color: rgb(251, 192, 82);
   margin: 0;
-  height: 10px;
-  padding: 20px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  padding: 8px 32px 8px;
+  width: 100%;
+  align-items: stretch;
+  box-sizing: border-box;
+  align-items: center;
 }
 </style>

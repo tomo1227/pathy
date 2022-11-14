@@ -1,10 +1,9 @@
 from django.urls import path
-from . import views
 from rest_framework import routers
-from .views import ArticleViewSet
+from apps.memo.views import ArticleViewSet, index
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', index, name='index'),
 ]
 router = routers.DefaultRouter()
 router.register('articles', ArticleViewSet)
