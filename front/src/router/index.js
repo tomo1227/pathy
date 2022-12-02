@@ -31,6 +31,21 @@ const routes = [
     component: () => import("../views/LogoutView.vue"),
     meta: { requiresAuth: true },
   },
+  {
+    path: "/signup",
+    name: "signup",
+    component: () => import("../views/SignupView.vue"),
+  },
+  {
+    path: "/last-signup",
+    name: "last-signup",
+    component: () => import("../views/LastSignUp.vue"),
+  },
+  {
+    path: "/activation/:uid/:token",
+    name: "activation",
+    component: () => import("../views/ActivateUser.vue"),
+  },
 ];
 
 const router = createRouter({

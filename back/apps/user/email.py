@@ -1,8 +1,22 @@
+from logging import getLogger
 from django.contrib.auth.tokens import default_token_generator
 from django.conf import settings
 
 from templated_mail.mail import BaseEmailMessage
 from djoser import utils
+
+logger = getLogger(__name__)
+# ******************************************************************************
+# 'view': <apps.user.email.ActivationEmail object at 0x7f2ba7cf3fa0>,
+# 'user': <MyUser: tomo.soccer1227@gmail.com>,
+# 'domain': 'localhost:8000',
+# 'protocol': 'http',
+# 'site_name': 'localhost:8000',
+# 'username': 'tomomon1227',
+# 'uid': 'NDY',
+# 'token': 'bfsgy6-54a59f690ab5792a55e2b465967be546',
+# 'url': 'api/v1/auth/users/activation/NDY/bfsgy6-54a59f690ab5792a55e2b465967be546'}
+# ******************************************************************************
 
 
 class EmailManager(BaseEmailMessage):
@@ -24,10 +38,12 @@ class ActivationEmail(EmailManager):
     def get_context_data(self):
         context = super().get_context_data()
         user = context.get("user")
+        context["domain"] = "localhost:8080"
         context["username"] = user.username
         context["uid"] = utils.encode_uid(user.pk)
         context["token"] = default_token_generator.make_token(user)
         context["url"] = settings.DJOSER["ACTIVATION_URL"].format(**context)
+        logger.debug(context)
         return context
 
 

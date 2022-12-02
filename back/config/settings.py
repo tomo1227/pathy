@@ -13,9 +13,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-!=a-%q&t(2w1g^)jx0&difxrf7ncckf4^tv=dxb3uf127@4zx2"
 
+# ローカル環境
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 INSTALLED_APPS = [
     "apps.user.apps.UserConfig",
@@ -117,6 +118,7 @@ STATIC_ROOT = "/static"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# ローカル環境
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8080",
 ]
@@ -172,32 +174,33 @@ DJOSER = {
     # パスワード変更時の確認必須
     "SET_PASSWORD_RETYPE": True,
     # パスワードリセットURL
-    "PASSWORD_RESET_CONFIRM_URL": "api/auth/users/reset_password_confirm/{uid}/{token}",
+    "PASSWORD_RESET_CONFIRM_URL": "api/v1/auth/users/reset_password_confirm/{uid}/{token}",
     # メールアドレスリセットURL
-    "USERNAME_RESET_CONFIRM_URL": "api/auth/users/reset_email_confirm/{uid}/{token}",
+    "USERNAME_RESET_CONFIRM_URL": "api/v1/auth/users/reset_email_confirm/{uid}/{token}",
     # アカウント登録URL
-    "ACTIVATION_URL": "localhost:8000/api/auth/users/activation/{uid}/{token}",
+    # "ACTIVATION_URL": "api/v1/auth/users/activation/{uid}/{token}",
+    "ACTIVATION_URL": "activation/{uid}/{token}",
     "SERIALIZERS": {
-        #'user_create': 'user.serializers.MyUserCreateSerializer',
+        'user_create': 'apps.user.serializers.MyUserCreateSerializer',
     },
     # メール文面
     "EMAIL": {
         # アカウント本登録
-        "activation": "user.email.ActivationEmail",
+        "activation": "apps.user.email.ActivationEmail",
         # アカウント本登録完了
-        "confirmation": "user.email.ConfirmationEmail",
+        "confirmation": "apps.user.email.ConfirmationEmail",
         # パスワードリセット
-        "password_reset": "user.email.PasswordResetEmail",
+        "password_reset": "apps.user.email.PasswordResetEmail",
         # パスワードリセット完了
-        "password_changed_confirmation": "user.email.PasswordChangedConfirmationEmail",
+        "password_changed_confirmation": "apps.user.email.PasswordChangedConfirmationEmail",
         # メールアドレスリセット完了
-        "username_changed_confirmation": "user.email.EmailChangedConfirmationEmail",
+        "username_changed_confirmation": "apps.user.email.EmailChangedConfirmationEmail",
         # メールアドレスリセット
-        "username_reset": "user.email.EmailResetEmail",
+        "username_reset": "apps.user.email.EmailResetEmail",
     },
 }
 
-# メール関連
+# メール関連 以下はgmailの設定
 # ローカル確認
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # 本番
@@ -206,11 +209,11 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 # 配信元メール
-EMAIL_HOST_USER = ""
-# ここにパスワード
-EMAIL_HOST_PASSWORD = ""
+EMAIL_HOST_USER = "tomo.soccer1227@gmail.com"
+# ここにパスワード(gmailの場合アプリパスワードを入力、2段階認証)
+EMAIL_HOST_PASSWORD = "xfnpvlocxvnhswpl"
 EMAIL_USE_TLS = True
-# DEFAULT_FROM_EMAIL = 'xxx@gmail.com'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # 本番ではこんな感じで環境変数に書いたの取る
 # EMAIL_HOST = os.environ.get('EMAIL_HOST', 'localhost')

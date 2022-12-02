@@ -25,6 +25,10 @@ const login = () => {
       }
     });
 };
+
+const signUp = () => {
+  router.push("/signUp");
+};
 </script>
 
 <template>
@@ -53,5 +57,9 @@ const login = () => {
       />
     </div>
     <button type="button" class="btn btn-primary" @click="login">Login</button>
+    <p>登録がまだの人はこちら</p>
+    <button type="button" class="btn btn-primary" @click="signUp">
+      新規登録
+    </button>
   </div>
 </template>

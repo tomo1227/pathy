@@ -13,4 +13,7 @@ createApp(App)
   .mount("#app");
 
 axios.defaults.baseURL = "http://localhost:8000/api/v1/";
+// axios.defaults.headers.post["Content-Type"] = "application/json";
+// axios.defaults.xsrfCookieName = "csrftoken";
+// axios.defaults.xsrfHeaderName = "X-CSRFTOKEN";
 // process.env.PATHY_API_ENDPOINT;
