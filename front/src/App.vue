@@ -8,7 +8,7 @@ const store = useAuthStore();
 
 <template>
   <header>
-    <div id="header_containers">
+    <div id="header_containers" class="wrapper header__wrapper">
       <HeaderBeforeLogin v-if="!store.loginState" />
       <HeaderAfterLogin v-else />
     </div>
@@ -36,20 +36,21 @@ body {
   color: #2c3e50;
 }
 
-header {
-  height: 90px;
-}
-
 #header_containers {
-  display: flex;
-  justify-content: space-between;
+  /* min-width: 0; */
   color: #000;
   background-color: rgb(251, 192, 82);
   margin: 0;
   padding: 8px 32px 8px;
   width: 100%;
-  align-items: stretch;
   box-sizing: border-box;
+  align-items: center;
+}
+
+.header__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: center;
 }
 </style>

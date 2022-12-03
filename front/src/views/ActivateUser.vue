@@ -10,7 +10,7 @@ const activation = () => {
     .get(`auth/users/activation/${uid}/${token}`)
     .then((response) => {
       if (response?.status == 204) {
-        flag = true;
+        // flag = true;
         router.push("/login");
       }
     })
@@ -25,7 +25,7 @@ const activation = () => {
 
 <template>
   <div>
-    <p>ボタンを押すと登録が完了し、自動的にログインページへと変わります。</p>
+    <p>ボタンを押すと登録が完了し、自動的にログインページへと移ります。</p>
     <button type="button" class="btn btn-primary" @click="activation">
       本登録する
     </button>

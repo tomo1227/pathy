@@ -125,11 +125,6 @@ CORS_ALLOWED_ORIGINS = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-STATIC_URL = "static/"
-STATIC_ROOT = "/static"
-
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
     "DEFAULT_AUTHENTICATION_CLASSES": (
@@ -209,9 +204,9 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 # 配信元メール
-EMAIL_HOST_USER = "tomo.soccer1227@gmail.com"
+EMAIL_HOST_USER = "pathy.tomoki001@gmail.com"
 # ここにパスワード(gmailの場合アプリパスワードを入力、2段階認証)
-EMAIL_HOST_PASSWORD = "xfnpvlocxvnhswpl"
+EMAIL_HOST_PASSWORD = "jmlkurlufzlngxgd"
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
