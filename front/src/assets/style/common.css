@@ -1,0 +1,73 @@
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+.form-control:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+.form-button {
+  background-color: #04aa6d;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.form-button:hover {
+  opacity: 1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+.bluebtn {
+  padding: 14px 20px;
+  background-color: #249dfb;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn,
+.signupbtn {
+  float: left;
+  width: 50%;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn,
+  .bluebtn,
+  .signupbtn {
+    width: 100%;
+  }
+}
+
+.form-container {
+  padding: 16px;
+}
+
+.validation-form {
+  font-size: 12px;
+  color: #fb0b0b;
+  font-weight:bold
+}
+.margin_zero {
+  margin: 0;
+}

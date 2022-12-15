@@ -2,6 +2,7 @@
 import HeaderBeforeLogin from "@/components/templates/HeaderBeforeLogin";
 import HeaderAfterLogin from "@/components/templates/HeaderAfterLogin";
 import { useAuthStore } from "@/stores/auth";
+import "@/assets/style/common.css";
 
 const store = useAuthStore();
 </script>

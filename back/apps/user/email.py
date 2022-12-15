@@ -38,7 +38,7 @@ class ActivationEmail(EmailManager):
     def get_context_data(self):
         context = super().get_context_data()
         user = context.get("user")
-        context["domain"] = "localhost:8080"
+        context["domain"] = "http://13.114.67.189:8080/"
         context["username"] = user.username
         context["uid"] = utils.encode_uid(user.pk)
         context["token"] = default_token_generator.make_token(user)

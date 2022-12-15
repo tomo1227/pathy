@@ -14,9 +14,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-!=a-%q&t(2w1g^)jx0&difxrf7ncckf4^tv=dxb3uf127@4zx2"
 
 # ローカル環境
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["pathy.jp","13.114.67.189"]
 
 INSTALLED_APPS = [
     "apps.user.apps.UserConfig",
@@ -120,7 +120,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ローカル環境
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
+    "http://pathy.jp/",
+    "http://13.114.67.189/"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -221,13 +222,13 @@ LOGGING = {
     "disable_existing_loggers": False,
     "handlers": {
         "file": {
-            "level": "DEBUG",
+            "level": "INFO",
             "class": "logging.FileHandler",
             "filename": "/var/log/pathy.log",
         },
     },
     "root": {
         "handlers": ["file"],
-        "level": "DEBUG",
+        "level": "INFO",
     },
 }

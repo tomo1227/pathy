@@ -8,6 +8,13 @@ const email = ref("");
 const password = ref("");
 const router = useRouter();
 const store = useAuthStore();
+const errorNotFound = ref(false);
+const errorMessage = ref({
+  username: false,
+  email: false,
+  password: false,
+  re_password: false,
+});
 
 const login = () => {
   axios
@@ -20,8 +27,21 @@ const login = () => {
       router.push("/");
     })
     .catch((error) => {
-      if (error.response?.status != 200) {
-        router.push("/login");
+      if (error.response?.status == 400) {
+        if (error.response.data) {
+          // validation
+          const errorData = error.response.data;
+          errorMessage.value.email = errorData.email
+            ? errorData.email[0]
+            : false;
+          errorMessage.value.password = errorData.password
+            ? errorData.password[0]
+            : false;
+        }
+      } else if (error.response?.status == 401) {
+        if (error.response.data) {
+          errorNotFound.value = "メールアドレスかパスワードが間違っています。";
+        }
       }
     });
 };
@@ -32,10 +52,17 @@ const signUp = () => {
 </script>
 
 <template>
-  <div class="login">
+  <div class="login form-container">
     <h1>Login</h1>
+    <hr />
+    <p class="margin_zero validation-form" v-show="errorNotFound">
+      {{ errorNotFound }}
+    </p>
     <div class="form-group">
       <label for="Email">Email</label>
+      <p class="margin_zero validation-form" v-show="errorMessage.email">
+        {{ errorMessage.email }}
+      </p>
       <input
         class="form-control"
         id="email"
@@ -47,6 +74,9 @@ const signUp = () => {
     </div>
     <div class="form-group">
       <label for="password">Password</label>
+      <p class="margin_zero validation-form" v-show="errorMessage.password">
+        {{ errorMessage.password }}
+      </p>
       <input
         id="password"
         class="form-control"
@@ -56,9 +86,15 @@ const signUp = () => {
         placeholder="パスワード"
       />
     </div>
-    <button type="button" class="btn btn-primary" @click="login">Login</button>
-    <p>登録がまだの人はこちら</p>
-    <button type="button" class="btn btn-primary" @click="signUp">
+    <button type="button" class="btn btn-primary form-button" @click="login">
+      Login
+    </button>
+    <p>登録がまだの人は新規登録！</p>
+    <button
+      type="button"
+      class="btn btn-primary bluebtn form-button"
+      @click="signUp"
+    >
       新規登録
     </button>
   </div>

@@ -9,6 +9,12 @@ const username = ref("");
 const email = ref("");
 const password = ref("");
 const re_password = ref("");
+const errorMessage = ref({
+  username: false,
+  email: false,
+  password: false,
+  re_password: false,
+});
 
 const submitSignUp = () => {
   // const store = useAuthStore();
@@ -31,11 +37,23 @@ const createUser = (params) => {
       router.push("/last-signup");
     })
     .catch((error) => {
-      if (error.response?.status != 200) {
-        console.warn(error.response?.status);
-        console.log(error.config);
-        console.log(error);
-        // router.push("/");
+      if (error.response?.status == 400) {
+        if (error.response.data) {
+          // validation
+          const errorData = error.response.data;
+          errorMessage.value.username = errorData.username
+            ? errorData.username[0]
+            : false;
+          errorMessage.value.email = errorData.email
+            ? errorData.email[0]
+            : false;
+          errorMessage.value.password = errorData.password
+            ? errorData.password[0]
+            : false;
+          errorMessage.value.re_password = errorData.re_password
+            ? errorData.re_password[0]
+            : false;
+        }
       }
     });
 };
@@ -46,49 +64,68 @@ const cancelSignUp = () => {
 
 <template>
   <form style="border: 1px solid #ccc">
-    <div class="container">
+    <div class="form-container">
       <h1>新規登録</h1>
       <!-- <p>Please fill in this form to create an account.</p> -->
       <hr />
       <label for="username"><b>username</b></label>
+      <p class="margin_zero validation-form" v-show="errorMessage.username">
+        {{ errorMessage.username }}
+      </p>
       <input
+        class="form-control"
         type="text"
         placeholder="Enter UserID"
         autocomplete="on"
         v-model="username"
-        required
       />
-
       <label for="email"><b>Email</b></label>
+      <p class="margin_zero validation-form" v-show="errorMessage.email">
+        {{ errorMessage.email }}
+      </p>
       <input
+        class="form-control"
         type="email"
         placeholder="Enter Email"
         autocomplete="on"
         v-model="email"
-        required
       />
-
       <label for="psw"><b>Password</b></label>
+      <p class="margin_zero validation-form" v-show="errorMessage.password">
+        {{ errorMessage.password }}
+      </p>
       <input
+        class="form-control"
         type="password"
         placeholder="Enter Password"
         autocomplete="off"
         v-model="password"
         required
       />
-
       <label for="psw-repeat"><b>Repeat Password</b></label>
+      <p class="margin_zero validation-form" v-show="errorMessage.re_password">
+        {{ errorMessage.re_password }}
+      </p>
       <input
+        class="form-control"
         type="password"
         placeholder="Repeat Password"
         v-model="re_password"
         required
       />
       <div class="clearfix">
-        <button type="button" class="cancelbtn" @click="cancelSignUp">
+        <button
+          type="button"
+          class="form-button cancelbtn"
+          @click="cancelSignUp"
+        >
           Cancel
         </button>
-        <button type="button" class="signupbtn" @click="submitSignUp">
+        <button
+          type="button"
+          class="signupbtn form-button"
+          @click="submitSignUp"
+        >
           Sign Up
         </button>
       </div>
@@ -97,80 +134,10 @@ const cancelSignUp = () => {
 </template>
 
 <style>
-* {
-  box-sizing: border-box;
-}
-
-/* Full-width input fields */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04aa6d;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
-button:hover {
-  opacity: 1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn,
-.signupbtn {
-  float: left;
-  width: 50%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-
 /* Clear floats */
 .clearfix::after {
   content: "";
   clear: both;
   display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn,
-  .signupbtn {
-    width: 100%;
-  }
 }
 </style>
