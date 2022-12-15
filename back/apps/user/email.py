@@ -43,7 +43,6 @@ class ActivationEmail(EmailManager):
         context["uid"] = utils.encode_uid(user.pk)
         context["token"] = default_token_generator.make_token(user)
         context["url"] = settings.DJOSER["ACTIVATION_URL"].format(**context)
-        logger.debug(context)
         return context
 
 
