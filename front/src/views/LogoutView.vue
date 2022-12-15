@@ -18,11 +18,13 @@ const nologout = () => {
 </script>
 
 <template>
-  <div class="logout">
-    <h1>ログアウトしますか？</h1>
+  <div class="logout form-container">
+    <h1>Logout</h1>
+    <hr />
+    <h2>ログアウトしますか？</h2>
     <div class="form-item">
-      <button class="submit btn" @click="logout">YES</button>
-      <button class="submit btn" @click="nologout">NO</button>
+      <button class="form-button cancelbtn" @click="nologout">NO</button>
+      <button class="form-button signupbtn" @click="logout">YES</button>
     </div>
   </div>
 </template>

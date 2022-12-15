@@ -72,7 +72,7 @@ services:
       - ./front:/code
       - ./front/node_modules:/code/node_modules
     ports:
-      - "8080:8080"
+      - "80:8080"
     expose:
       -  "3000"
     tty: true

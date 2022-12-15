@@ -14,6 +14,7 @@ const { email } = storeToRefs(store);
 const { accessToken } = storeToRefs(store);
 const markdownTitle = ref("Title");
 const markdownText = ref("# Hello Markdown!!");
+const isPosted = ref(false);
 
 // タイトル
 const titlePreview = computed(() => {
@@ -55,6 +56,7 @@ const submit = () => {
     },
   })
     .then((response) => {
+      // isPosted.value = true;
       console.log(response);
     })
     .catch((error) => {
@@ -70,6 +72,9 @@ const submit = () => {
     <button class="post-btn-item green-btn" @click="submit">投稿</button>
     <button class="post-btn-item yellow-btn">下書き</button>
     <button class="post-btn-item red-btn">削除</button>
+  </div>
+  <div id="post-status" v-show="isPosted">
+    <p>投稿できました。</p>
   </div>
   <div id="editor-title">
     <div id="editor-title-input">
@@ -97,12 +102,39 @@ const submit = () => {
   padding: 0 15px;
 }
 
+@media screen and (max-width: 560px) {
+  #post-btn-container {
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+#post-status {
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+@media screen and (max-width: 560px) {
+  #post-status {
+    padding: 0;
+  }
+}
+
 .post-btn-item {
   margin: 0 2px;
   width: 70px;
   box-shadow: 0 3px 5px rgb(0 0 0 / 50%);
   font-size: 14px;
   font-weight: bold;
+}
+
+@media screen and (max-width: 560px) {
+  .post-btn-item {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 .post-btn-item:hover {
@@ -113,19 +145,19 @@ const submit = () => {
 .red-btn {
   border: 0;
   appearance: none;
-  background-color: rgb(239, 110, 110);
+  background-color: rgb(242 53 53 / 80%);
   border-radius: 5px;
 }
 .yellow-btn {
   border: 0;
   appearance: none;
-  background-color: rgb(234, 218, 94);
+  background-color: rgb(248 238 70);
   border-radius: 5px;
 }
 .green-btn {
   border: 0;
   appearance: none;
-  background-color: rgb(51, 213, 51);
+  background-color: rgb(17 247 109);
   border-radius: 5px;
 }
 
@@ -178,6 +210,10 @@ textarea {
 
 pre code.hljs {
   padding: 0.2em;
+}
+
+.preview {
+  text-align: left;
 }
 
 .preview,
