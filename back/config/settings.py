@@ -120,8 +120,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ローカル環境
 CORS_ALLOWED_ORIGINS = [
-    "http://pathy.jp/",
-    "http://13.114.67.189/"
+    "https://pathy.jp",
+    "https://13.114.67.189"
 ]
 
 CORS_ALLOW_CREDENTIALS = True
