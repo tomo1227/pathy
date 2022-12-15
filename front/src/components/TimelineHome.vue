@@ -45,9 +45,12 @@ onMounted(() => {
 }
 
 #title-timeline {
-  height: 40px;
-  border: 5px solid maroon;
-  margin: 5px;
-  background-color: #eee;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
 }
 </style>
