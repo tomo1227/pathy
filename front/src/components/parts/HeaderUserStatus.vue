@@ -19,7 +19,7 @@ const openUserMenu = () => {
   >
     <img
       id="header-user-icon"
-      src="https://github.com/mdo.png"
+      src="https://github.com/tomo1227.png"
       alt="mdo"
       width="32"
       height="32"
