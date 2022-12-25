@@ -45,6 +45,7 @@ export const useAuthStore = defineStore(
         .then((response) => {
           // storeのトークン更新
           refresher(response.data.access, response.data.refresh);
+          location.reload();
         })
         .catch(() => {
           // トークンrefresh出来なかったら、ログアウトしてログイン画面へ
